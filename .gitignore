@@ -7,9 +7,9 @@ applicationhost.config
 *.userprefs
 
 # Build directories
-Pizzeria/[Bb]in/
-Pizzeria/[Oo]bj/
-Pizzeria/[Ll]og/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
 
 # Visual Studio cache/options directory
 .vs/

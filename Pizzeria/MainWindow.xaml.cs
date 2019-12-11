@@ -38,12 +38,6 @@ namespace Pizzeria
             _speechSynthesizer.SetOutputToDefaultAudioDevice();
             _speechRecognitionEngine.SetInputToDefaultAudioDevice();
             _speechSynthesizer.SelectVoice("Microsoft Server Speech Text to Speech Voice (pl-PL, Paulina)");
-            Console.WriteLine("Installed voices -");
-            foreach (InstalledVoice voice in _speechSynthesizer.GetInstalledVoices())
-            {
-                VoiceInfo info = voice.VoiceInfo;
-                Console.WriteLine(" Voice Name: " + info.Name);
-            }
         }
 
         private void PizzaManager(object sender, SpeechRecognizedEventArgs e)
@@ -121,7 +115,7 @@ namespace Pizzeria
         {
             _pizza.ResetPizze();
             SetLabels();
-            Dispatcher.Invoke(() => { ticket.Stroke = Brushes.White; });
+            Dispatcher?.Invoke(() => { ticket.Stroke = Brushes.White; });
             _speechSynthesizer.SpeakAsync("Spróbuj jeszcze raz");
         }
 
@@ -136,7 +130,7 @@ namespace Pizzeria
 
         private void SetLabels()
         {
-            Dispatcher.Invoke(() =>
+            Dispatcher?.Invoke(() =>
             {
                 pizzaNumber.Content = _pizza.Number;
                 pizzaCake.Content = _pizza.Cake;
