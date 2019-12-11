@@ -42,6 +42,7 @@ namespace Pizzeria
 
         private void PizzaManager(object sender, SpeechRecognizedEventArgs e)
         {
+            _speechSynthesizer.SpeakAsync("Powieś cycki na choice");
             if (!_speechOn) return;
             var text = e.Result.Text;
             var textList = text.Split(' ').ToList();
@@ -121,10 +122,10 @@ namespace Pizzeria
 
         private void RunPizzeria(object sender, DoWorkEventArgs e)
         {
-            _speechRecognitionEngine.SpeechRecognized += PizzaManager;
             _speechSynthesizer.Speak("Witaj w pizzerii. Proszę podać nazwę piccy!");
             _grammarFactory.AddGrammars(_speechRecognitionEngine);
 
+            _speechRecognitionEngine.SpeechRecognized += PizzaManager;
             _speechRecognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
         }
 

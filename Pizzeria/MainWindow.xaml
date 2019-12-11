@@ -5,24 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pizzeria"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="729.449">
-    <Grid Margin="0,0,0,96">
+        Title="MainWindow" Height="450" Width="729.449" FontSize="24" FontFamily="Vladimir Script">
+    <Grid Margin="0,0,0,0">
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
+            <ImageBrush ImageSource="pizza.jpg" Stretch="UniformToFill" Opacity="0.3" />
         </Grid.Background>
-        <Rectangle x:Name="ticket" Fill="White" HorizontalAlignment="Left" Height="94" Margin="5,161,0,0" Stroke="Black" VerticalAlignment="Top" Width="231" StrokeThickness="6"/>
-        <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="10,388,0,-91" VerticalAlignment="Top" RenderTransformOrigin="2.268,2.72"/>
-        <Label Content="Pizza:" HorizontalAlignment="Left" Height="28" Margin="10,161,0,0" VerticalAlignment="Top" Width="101"/>
-        <Label Content="Ciasto:" HorizontalAlignment="Left" Height="36" Margin="10,189,0,0" VerticalAlignment="Top" Width="66"/>
-        <Label Content="Sos" HorizontalAlignment="Left" Height="30" Margin="10,225,0,0" VerticalAlignment="Top" Width="66"/>
-        <Label x:Name="pizzaNumber" Content="" HorizontalAlignment="Left" Height="28" Margin="100,161,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label x:Name="pizzaCake" Content="" HorizontalAlignment="Left" Height="26" Margin="100,194,0,0" VerticalAlignment="Top" Width="76"/>
-        <Label x:Name="pizzaDip" Content="" HorizontalAlignment="Left" Height="25" Margin="100,230,0,0" VerticalAlignment="Top" Width="63"/>
-        <Label Content="Do zapłaty:" HorizontalAlignment="Left" Height="36" Margin="10,287,0,0" VerticalAlignment="Top" Width="66"/>
-        <Label x:Name="pizzaPrice" Content="" HorizontalAlignment="Left" Height="31" Margin="100,287,0,0" VerticalAlignment="Top" Width="63"/>
-        <Image Margin="0,0,0,-102" Source="pizza.jpg" Stretch="Fill" Opacity="0.3"/>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Pizzeria" Grid.ColumnSpan="4" 
+                   HorizontalAlignment="Center" Margin="20" FontSize="64" FontFamily="Vivaldi"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Pizza:" Margin="10"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Ciasto: " Margin="10"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Sos" Margin="10"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="Do zapłaty:" Margin="10"/>
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="pizzaNumber" Width="150" Margin="10"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="pizzaCake" Width="150" Margin="10"/>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="pizzaDip" Width="150" Margin="10"/>
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="pizzaPrice" Width="150" Margin="10"/>
     </Grid>
 </Window>
