@@ -33,10 +33,17 @@ namespace Pizzeria
 
         private void InitializeBot()
         {
-            var culture = new CultureInfo("PL-pl");
+            var culture = new CultureInfo("pl-PL");
             _speechRecognitionEngine = new SpeechRecognitionEngine(culture);
             _speechSynthesizer.SetOutputToDefaultAudioDevice();
             _speechRecognitionEngine.SetInputToDefaultAudioDevice();
+            _speechSynthesizer.SelectVoice("Microsoft Server Speech Text to Speech Voice (pl-PL, Paulina)");
+            Console.WriteLine("Installed voices -");
+            foreach (InstalledVoice voice in _speechSynthesizer.GetInstalledVoices())
+            {
+                VoiceInfo info = voice.VoiceInfo;
+                Console.WriteLine(" Voice Name: " + info.Name);
+            }
         }
 
         private void PizzaManager(object sender, SpeechRecognizedEventArgs e)
