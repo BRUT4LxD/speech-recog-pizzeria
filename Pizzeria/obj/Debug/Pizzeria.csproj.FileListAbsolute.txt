@@ -1,0 +1,17 @@
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\Debug\Pizzeria.exe.config
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\Debug\Pizzeria.exe
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\Debug\Pizzeria.pdb
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.csprojAssemblyReference.cache
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\MainWindow.g.cs
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\App.g.cs
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria_MarkupCompile.cache
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria_MarkupCompile.lref
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\MainWindow.baml
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.g.resources
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.Properties.Resources.resources
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.GenerateResource.cache
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.CoreCompileInputs.cache
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.exe
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.pdb
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\Debug\Microsoft.Speech.dll
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.CopyComplete

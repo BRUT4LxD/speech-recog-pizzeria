@@ -1,0 +1,33 @@
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\x64\Debug\Pizzeria.exe.config
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\x64\Debug\Pizzeria.exe
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\x64\Debug\Pizzeria.pdb
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\bin\x64\Debug\Microsoft.Speech.dll
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\MainWindow.g.cs
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\App.g.cs
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria_MarkupCompile.cache
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria_MarkupCompile.lref
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\MainWindow.baml
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.g.resources
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.Properties.Resources.resources
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csproj.GenerateResource.cache
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csproj.CoreCompileInputs.cache
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csproj.CopyComplete
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.exe
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.pdb
+c:\users\student.laboratoriumita\source\repos\Pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csprojAssemblyReference.cache
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\bin\x64\Debug\Pizzeria.exe.config
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\bin\x64\Debug\Pizzeria.exe
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\bin\x64\Debug\Pizzeria.pdb
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\bin\x64\Debug\Microsoft.Speech.dll
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csprojAssemblyReference.cache
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\MainWindow.g.cs
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\App.g.cs
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria_MarkupCompile.cache
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria_MarkupCompile.lref
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\MainWindow.baml
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.g.resources
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.Properties.Resources.resources
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csproj.GenerateResource.cache
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csproj.CopyComplete
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.exe
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.pdb
