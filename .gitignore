@@ -1,0 +1,15 @@
+appsettings.local.json
+applicationhost.config
+
+# User-specific files
+*.suo
+*.user
+*.userprefs
+
+# Build directories
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio cache/options directory
+.vs/
