@@ -39,6 +39,15 @@ namespace Pizzeria
             _speechSynthesizer.SelectVoice("Microsoft Server Speech Text to Speech Voice (pl-PL, Paulina)");
         }
 
+        private void RunPizzeria(object sender, DoWorkEventArgs e)
+        {
+            _speechSynthesizer.Speak("Witaj w pizzerii. Proszę podać nazwę piccy!");
+            _grammarFactory.AddGrammars(_speechRecognitionEngine);
+
+            _speechRecognitionEngine.SpeechRecognized += PizzaManager;
+            _speechRecognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
+        }
+
         private void PizzaManager(object sender, SpeechRecognizedEventArgs e)
         {
             _speechSynthesizer.SpeakAsync("Powieś cycki na choince");
@@ -151,15 +160,6 @@ namespace Pizzeria
                 _speechSynthesizer.SpeakAsync("Jaka picca?");
             }
 
-        }
-
-        private void RunPizzeria(object sender, DoWorkEventArgs e)
-        {
-            _speechSynthesizer.Speak("Witaj w pizzerii. Proszę podać nazwę piccy!");
-            _grammarFactory.AddGrammars(_speechRecognitionEngine);
-
-            _speechRecognitionEngine.SpeechRecognized += PizzaManager;
-            _speechRecognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
         }
 
         private void SetLabels()
