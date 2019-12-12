@@ -3,7 +3,7 @@ namespace Pizzeria
 {
     public static class PizzaInfo
     {
-        public static List<string> DefaultCommands = new List<string>
+        public static readonly IEnumerable<string> DefaultCommands = new List<string>(2)
         {
             "Pomoc",
             "Stop"
@@ -22,12 +22,12 @@ namespace Pizzeria
         //    "Bez"
         //};
 
-        public static List<string> PizzaNumbers = new List<string>
+        public static readonly IEnumerable<string> PizzaChoices = new List<string>(2)
         {
             "peperoni",
             "hawajska",
         };
-        public static List<string> Dipps = new List<string>
+        public static readonly IEnumerable<string> Dipps = new List<string>(6)
         {
             "Czosnkowy",
             "Meksykański",
@@ -37,7 +37,7 @@ namespace Pizzeria
             "Bez"
         };
 
-        public static List<string> Cakes = new List<string>
+        public static readonly IEnumerable<string> Cakes = new List<string>(3)
         {
             "Grube",
             "Cienke",

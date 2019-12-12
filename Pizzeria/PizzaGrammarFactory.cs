@@ -1,4 +1,5 @@
-﻿using Microsoft.Speech.Recognition;
+﻿using System.Linq;
+using Microsoft.Speech.Recognition;
 
 namespace Pizzeria
 {
@@ -7,7 +8,7 @@ namespace Pizzeria
         public void AddGrammars(SpeechRecognitionEngine engine)
         {
             Choices systemChoices = new Choices(PizzaInfo.DefaultCommands.ToArray());
-            Choices pizzaChoice = new Choices(PizzaInfo.PizzaNumbers.ToArray());
+            Choices pizzaChoice = new Choices(PizzaInfo.PizzaChoices.ToArray());
             Choices pizzaCakes = new Choices(PizzaInfo.Cakes.ToArray());
             Choices pizzaDips = new Choices(PizzaInfo.Dipps.ToArray());
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pizzeria"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="729.449" FontSize="24" FontFamily="Vladimir Script">
+        Title="MainWindow" Height="450" Width="729.449" FontSize="32" FontFamily="Vladimir Script">
     <Grid Margin="0,0,0,0">
         <Grid.Background>
             <ImageBrush ImageSource="pizza.jpg" Stretch="UniformToFill" Opacity="0.3" />
@@ -32,9 +32,10 @@
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Ciasto: " Margin="10"/>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Sos" Margin="10"/>
         <TextBlock Grid.Row="4" Grid.Column="1" Text="Do zapłaty:" Margin="10"/>
-        <TextBox Grid.Row="1" Grid.Column="2" x:Name="pizzaNumber" Width="150" Margin="10"/>
-        <TextBox Grid.Row="2" Grid.Column="2" x:Name="pizzaCake" Width="150" Margin="10"/>
-        <TextBox Grid.Row="3" Grid.Column="2" x:Name="pizzaDip" Width="150" Margin="10"/>
-        <TextBox Grid.Row="4" Grid.Column="2" x:Name="pizzaPrice" Width="150" Margin="10"/>
+        <TextBlock Grid.Row="5" Grid.Column="3" Text="Najlepsza pizza w galaktyce" FontSize="23" FontFamily="Viner Hand ITC"/>
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="pizzaNumber" Width="200" Margin="10"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="pizzaCake" Width="200" Margin="10"/>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="pizzaDip" Width="200" Margin="10"/>
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="pizzaPrice" Width="200" Margin="10"/>
     </Grid>
 </Window>
