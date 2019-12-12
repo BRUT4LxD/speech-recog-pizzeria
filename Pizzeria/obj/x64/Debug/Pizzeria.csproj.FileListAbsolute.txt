@@ -31,3 +31,5 @@ C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dia
 C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.csproj.CopyComplete
 C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.exe
 C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\obj\x64\Debug\Pizzeria.pdb
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\bin\x64\Debug\System.Management.dll
+C:\Users\Z6PLT\Desktop\Moje\Studia\Sem 9\Standardy w projektowaniu systemach dialogowych\speech-recog-pizzeria\Pizzeria\bin\x64\Debug\System.Management.Instrumentation.dll

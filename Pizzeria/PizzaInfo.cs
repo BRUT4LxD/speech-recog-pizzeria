@@ -3,10 +3,11 @@ namespace Pizzeria
 {
     public static class PizzaInfo
     {
-        public static readonly IEnumerable<string> DefaultCommands = new List<string>(2)
+        public static readonly IEnumerable<string> DefaultCommands = new List<string>(3)
         {
             "Pomoc",
-            "Stop"
+            "Stop",
+            "Anuluj"
         };
 
 

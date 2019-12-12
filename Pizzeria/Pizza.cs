@@ -8,7 +8,7 @@
         public string AdditionalIngredience { get; set; } = "";
         public string Price { get; set; }
 
-        public void ResetPizze()
+        public void ResetPizza()
         {
             Choice = "";
             Dip = "";

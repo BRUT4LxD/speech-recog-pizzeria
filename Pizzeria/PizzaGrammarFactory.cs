@@ -1,44 +1,85 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.Speech.Recognition;
 
 namespace Pizzeria
 {
     internal class PizzaGrammarFactory
     {
+        private readonly GrammarBuilder _systemGrammarBuilder = new GrammarBuilder(new Choices(PizzaInfo.DefaultCommands.ToArray()));
+        private readonly GrammarBuilder _choicesGrammarBuilder = new GrammarBuilder(new Choices(PizzaInfo.PizzaChoices.ToArray()));
+        private readonly GrammarBuilder _cakesGrammarBuilder = new GrammarBuilder(new Choices(PizzaInfo.Cakes.ToArray()));
+        private readonly GrammarBuilder _dipsGrammarBuilder = new GrammarBuilder(new Choices(PizzaInfo.Dipps.ToArray()));
+
         public void AddGrammars(SpeechRecognitionEngine engine)
         {
-            Choices systemChoices = new Choices(PizzaInfo.DefaultCommands.ToArray());
-            Choices pizzaChoice = new Choices(PizzaInfo.PizzaChoices.ToArray());
-            Choices pizzaCakes = new Choices(PizzaInfo.Cakes.ToArray());
-            Choices pizzaDips = new Choices(PizzaInfo.Dipps.ToArray());
+            BuildSingleGrammars(engine);
+            BuildDoubleGrammars(engine);
+            BuildTripleGrammars(engine);
 
-            GrammarBuilder systemGrammarBuilder = new GrammarBuilder();
-            systemGrammarBuilder.Append(systemChoices);
-            Grammar systemGrammar = new Grammar(systemGrammarBuilder);
-
-            GrammarBuilder choiceBuilder = new GrammarBuilder();
-            GrammarBuilder cakeBuilder = new GrammarBuilder();
-            GrammarBuilder dipBuilder = new GrammarBuilder();
-            choiceBuilder.Append(pizzaChoice);
-            cakeBuilder.Append(pizzaCakes);
-            dipBuilder.Append(pizzaDips);
-
-            Grammar choiceGrammar = new Grammar(choiceBuilder);
-            Grammar cakeGrammar = new Grammar(cakeBuilder);
-            Grammar dipGrammar = new Grammar(dipBuilder);
-            engine.LoadGrammarAsync(choiceGrammar);
-            engine.LoadGrammarAsync(cakeGrammar);
-            engine.LoadGrammarAsync(dipGrammar);
-            engine.LoadGrammarAsync(systemGrammar);
-
-            GrammarBuilder allBuilder = new GrammarBuilder();
-            allBuilder.Append(choiceBuilder);
-            allBuilder.Append(cakeBuilder);
-            allBuilder.Append(dipBuilder);
-            Grammar allGrammar = new Grammar(allBuilder);
-
-            engine.LoadGrammarAsync(allGrammar);
         }
 
+        private void BuildSingleGrammars(SpeechRecognitionEngine engine)
+        {
+            Console.WriteLine(engine.RecognizerInfo.Culture);
+            _systemGrammarBuilder.Culture = engine.RecognizerInfo.Culture;
+            var systemGrammar = new Grammar(_systemGrammarBuilder);
+
+            _choicesGrammarBuilder.Culture = engine.RecognizerInfo.Culture;
+            _cakesGrammarBuilder.Culture = engine.RecognizerInfo.Culture;
+            _dipsGrammarBuilder.Culture = engine.RecognizerInfo.Culture;
+
+            var choiceGrammar = new Grammar(_choicesGrammarBuilder);
+            var cakeGrammar = new Grammar(_cakesGrammarBuilder);
+            var dipGrammar = new Grammar(_dipsGrammarBuilder);
+            engine.LoadGrammar(choiceGrammar);
+            engine.LoadGrammar(cakeGrammar);
+            engine.LoadGrammar(dipGrammar);
+            engine.LoadGrammar(systemGrammar);
+        }
+
+        private void BuildDoubleGrammars(SpeechRecognitionEngine engine)
+        {
+            var builder = new GrammarBuilder();
+            builder.Append(_choicesGrammarBuilder);
+            builder.Append(_cakesGrammarBuilder);
+            var grammar = new Grammar(builder);
+
+            builder.Culture = engine.RecognizerInfo.Culture;
+            engine.LoadGrammar(grammar);
+
+
+            builder = new GrammarBuilder();
+            builder.Append(_choicesGrammarBuilder);
+            builder.Append(_dipsGrammarBuilder);
+            builder.Culture = engine.RecognizerInfo.Culture;
+
+            grammar = new Grammar(builder);
+
+            engine.LoadGrammar(grammar);
+        }
+
+        private void BuildTripleGrammars(SpeechRecognitionEngine engine)
+        {
+            var builder = new GrammarBuilder();
+            builder.Append(_choicesGrammarBuilder);
+            builder.Append(_cakesGrammarBuilder);
+            builder.Append(_dipsGrammarBuilder);
+            builder.Culture = engine.RecognizerInfo.Culture;
+
+            var grammar = new Grammar(builder);
+
+            engine.LoadGrammar(grammar);
+
+            builder = new GrammarBuilder();
+            builder.Append(_choicesGrammarBuilder);
+            builder.Append(_dipsGrammarBuilder);
+            builder.Append(_cakesGrammarBuilder);
+            builder.Culture = engine.RecognizerInfo.Culture;
+            grammar = new Grammar(builder);
+
+            engine.LoadGrammar(grammar);
+
+        }
     }
 }
