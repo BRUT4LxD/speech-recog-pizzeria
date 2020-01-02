@@ -7,7 +7,7 @@ namespace Pizzeria
         {
             "Help",
             "Stop",
-            "Cancel"
+            "Reset"
         };
 
 
@@ -23,26 +23,32 @@ namespace Pizzeria
         //    "Bez"
         //};
 
-        public static readonly IEnumerable<string> PizzaChoices = new List<string>(2)
+        public static readonly IEnumerable<string> PizzaChoices = new List<string>(4)
         {
             "peperoni",
             "hawai",
             "hawaiian",
+            "hawaiian pizza",
         };
-        public static readonly IEnumerable<string> Dipps = new List<string>(6)
+        public static readonly IEnumerable<string> Dipps = new List<string>(7)
         {
             "garlic",
+            "garlic sauce",
             "maxican",
+            "maxican sauce",
             "arabian",
-            "no sauce",
-            "no"
+            "arabian sauce",
+            "no sauce"
         };
 
-        public static readonly IEnumerable<string> Cakes = new List<string>(3)
+        public static readonly IEnumerable<string> Cakes = new List<string>(6)
         {
             "thick",
+            "thick cake",
             "thin",
-            "medium"
+            "thin cake",
+            "medium",
+            "medium cake"
         };
     }
 }

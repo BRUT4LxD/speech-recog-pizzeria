@@ -14,7 +14,8 @@ namespace Pizzeria
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const double ConfidenceThreshold = 0.01;
+        private const double ConfidenceThreshold = 0.4;
+        private bool _initiative = true;
         private readonly PizzaGrammarFactory _grammarFactory = new PizzaGrammarFactory();
         private readonly Pizza _pizza = new Pizza();
         private readonly SpeechSynthesizer _speechSynthesizer = new SpeechSynthesizer();
@@ -35,6 +36,8 @@ namespace Pizzeria
             var culture = new CultureInfo("en-US");
             _speechRecognitionEngine = new SpeechRecognitionEngine(culture);
 
+            _speechRecognitionEngine.BabbleTimeout += TimeSpan.FromSeconds(2);
+            _speechRecognitionEngine.InitialSilenceTimeout += TimeSpan.FromSeconds(10);
             _speechSynthesizer.SetOutputToDefaultAudioDevice();
             _speechRecognitionEngine.SetInputToDefaultAudioDevice();
             // _speechSynthesizer.SelectVoice("Microsoft Server Speech Text to Speech Voice (pl-PL, Paulina)");
@@ -62,12 +65,20 @@ namespace Pizzeria
             if (confidence >= ConfidenceThreshold)
             {
                 Console.WriteLine(text);
+                if (_initiative)
+                {
+                    ProcessHelpMessages(textList);
+                    ProcessOrder(textList);
+                    FillKnownProperties(textList);
+                    _initiative = false;
+                }
+                else
+                {
+                    FillKnownProperties(textList);
+                    ProcessHelpMessages(textList);
+                    ProcessOrder(textList);
 
-                ProcessHelpMessages(textList);
-
-                ProcessOrder(textList);
-
-                FillKnownProperties(textList);
+                }
 
                 if (_pizza.OrderReady())
                 {
@@ -77,6 +88,11 @@ namespace Pizzeria
                     //_speechSynthesizer.SpeakAsync("Dziękuję za zamówienie");
                     _speechOn = false;
                 }
+
+            }
+            else
+            {
+                _speechSynthesizer.SpeakAsync($"Sorry I didn't get that.");
             }
         }
 
@@ -87,7 +103,17 @@ namespace Pizzeria
 
         private void ProcessOrder(IReadOnlyCollection<string> textList)
         {
-            switch (textList.Count)
+            int noice = 0;
+            if (textList.Contains("sauce"))
+            {
+                noice++;
+            }
+
+            if (textList.Contains("pizza"))
+            {
+                noice++;
+            }
+            switch (textList.Count - noice)
             {
                 case 1:
                     ProcessStepByStep();
@@ -149,18 +175,18 @@ namespace Pizzeria
                 //_speechSynthesizer.SpeakAsync("Dziękuję za zamówienie!");
                 CalculateThePrice();
                 SetLabels();
-                _speechSynthesizer.SpeakAsync($"Thank you for the order. It will be {_pizza.Price} dollars. Have a nice day!");
+                _speechSynthesizer.SpeakAsync("It was a pleasure to serve you. Have a nice day!");
                 return;
             }
 
-            if (textList.Contains("Pomoc"))
+            if (textList.Contains("Help"))
             {
                 _speechSynthesizer.SpeakAsync("Please order a pizza!");
                 //_speechSynthesizer.SpeakAsync("Zamów piccce!");
                 return;
             }
 
-            if (textList.Contains("Anuluj"))
+            if (textList.Contains("Reset"))
             {
                 _speechSynthesizer.SpeakAsync("Resetting the order! You can order new one now.");
                 //_speechSynthesizer.SpeakAsync("Anulowano zamówienie!");

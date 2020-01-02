@@ -43,20 +43,26 @@ namespace Pizzeria
             var builder = new GrammarBuilder();
             builder.Append(_choicesGrammarBuilder);
             builder.Append(_cakesGrammarBuilder);
-            var grammar = new Grammar(builder);
 
-            builder.Culture = engine.RecognizerInfo.Culture;
+            var grammar = new Grammar(builder);
             engine.LoadGrammar(grammar);
 
 
             builder = new GrammarBuilder();
             builder.Append(_choicesGrammarBuilder);
             builder.Append(_dipsGrammarBuilder);
-            builder.Culture = engine.RecognizerInfo.Culture;
 
+            grammar = new Grammar(builder);
+            engine.LoadGrammar(grammar);
+
+
+            builder = new GrammarBuilder();
+            builder.Append(_cakesGrammarBuilder);
+            builder.Append(_choicesGrammarBuilder);
             grammar = new Grammar(builder);
 
             engine.LoadGrammar(grammar);
+
         }
 
         private void BuildTripleGrammars(SpeechRecognitionEngine engine)
@@ -75,6 +81,16 @@ namespace Pizzeria
             builder.Append(_choicesGrammarBuilder);
             builder.Append(_dipsGrammarBuilder);
             builder.Append(_cakesGrammarBuilder);
+            builder.Culture = engine.RecognizerInfo.Culture;
+            grammar = new Grammar(builder);
+
+            engine.LoadGrammar(grammar);
+
+
+            builder = new GrammarBuilder();
+            builder.Append(_cakesGrammarBuilder);
+            builder.Append(_choicesGrammarBuilder);
+            builder.Append(_dipsGrammarBuilder);
             builder.Culture = engine.RecognizerInfo.Culture;
             grammar = new Grammar(builder);
 
