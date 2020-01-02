@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
-using System.Management;
 using System.Windows;
 using Microsoft.Speech.Recognition;
 using Microsoft.Speech.Synthesis;
@@ -32,38 +31,20 @@ namespace Pizzeria
 
         private void InitializeBot()
         {
-            #region
-            var mos = new ManagementObjectSearcher("select * from Win32_SoundDevice");
-            foreach (ManagementObject soundDevice in mos.Get())
-            {
-                var sDeviceId = soundDevice.GetPropertyValue("DeviceId").ToString();
-                var sDeviceName = soundDevice.GetPropertyValue("Name").ToString();
-                var sDeviceStatus = soundDevice.GetPropertyValue("Status").ToString();
-                Console.WriteLine(@"Device Name = {0} - Device Id = {1} - Status = {2}", sDeviceName, sDeviceId, sDeviceStatus);
-            }
-            var mos2 = new ManagementObjectSearcher("select * from Win32_VideoController");
-            foreach (ManagementObject videoDevice in mos2.Get())
-            {
-                var sDeviceId = videoDevice.GetPropertyValue("DeviceId").ToString();
-                var sDeviceName = videoDevice.GetPropertyValue("Name").ToString();
-                var sDeviceStatus = videoDevice.GetPropertyValue("Status").ToString();
-                Console.WriteLine(@"Device Name = {0} - Device Id = {1} - Status = {2}", sDeviceName, sDeviceId, sDeviceStatus);
-            }
-            #endregion
 
-
-            var culture = new CultureInfo("pl-PL");
+            var culture = new CultureInfo("en-US");
             _speechRecognitionEngine = new SpeechRecognitionEngine(culture);
 
             _speechSynthesizer.SetOutputToDefaultAudioDevice();
             _speechRecognitionEngine.SetInputToDefaultAudioDevice();
-            _speechSynthesizer.SelectVoice("Microsoft Server Speech Text to Speech Voice (pl-PL, Paulina)");
+            // _speechSynthesizer.SelectVoice("Microsoft Server Speech Text to Speech Voice (pl-PL, Paulina)");
         }
 
         private void RunPizzeria(object sender, DoWorkEventArgs e)
         {
             InitializeBot();
-            _speechSynthesizer.Speak("Witaj w pizzerii. Proszę podać nazwę piccy!");
+            _speechSynthesizer.Speak("Welcome in intergalactic Pizzeria. Which pizza do you prefer?");
+            //_speechSynthesizer.Speak("Witaj w pizzerii. Proszę podać nazwę piccy!");
             _grammarFactory.AddGrammars(_speechRecognitionEngine);
             _speechRecognitionEngine.SpeechRecognized += PizzaManager;
             _speechRecognitionEngine.RecognizeAsync(RecognizeMode.Multiple);
@@ -72,7 +53,6 @@ namespace Pizzeria
 
         private void PizzaManager(object sender, SpeechRecognizedEventArgs e)
         {
-            _speechSynthesizer.SpeakAsync("Powieś cycki na choince");
             if (!_speechOn) return;
             var text = e.Result.Text;
             var textList = text.Split(' ').ToList();
@@ -91,10 +71,18 @@ namespace Pizzeria
 
                 if (_pizza.OrderReady())
                 {
-                    _speechSynthesizer.SpeakAsync("Dziękuję za zamówienie");
+                    CalculateThePrice();
+                    SetLabels();
+                    _speechSynthesizer.SpeakAsync($"Thank you for the order. It will be {_pizza.Price} dollars. Have a nice day!");
+                    //_speechSynthesizer.SpeakAsync("Dziękuję za zamówienie");
                     _speechOn = false;
                 }
             }
+        }
+
+        private void CalculateThePrice()
+        {
+            _pizza.Price = new Random().Next(20, 45).ToString();
         }
 
         private void ProcessOrder(IReadOnlyCollection<string> textList)
@@ -114,15 +102,18 @@ namespace Pizzeria
         {
             if (textList.Select(el => el).Intersect(PizzaInfo.Cakes).ToList().Count == 0)
             {
-                _speechSynthesizer.SpeakAsync("Proszę podać rodzaj ciasta");
+                _speechSynthesizer.SpeakAsync("And what kind of cake do you prefer?");
+                //_speechSynthesizer.SpeakAsync("Proszę podać rodzaj ciasta");
             }
             else if (textList.Select(el => el).Intersect(PizzaInfo.Dipps).ToList().Count == 0)
             {
-                _speechSynthesizer.SpeakAsync("Proszę podać sos");
+                _speechSynthesizer.SpeakAsync("How about the sauce?");
+                //_speechSynthesizer.SpeakAsync("Proszę podać sos");
             }
             else if (textList.Select(el => el).Intersect(PizzaInfo.PizzaChoices).ToList().Count == 0)
             {
-                _speechSynthesizer.SpeakAsync("Jaka będzie picca?");
+                _speechSynthesizer.SpeakAsync("Which pizza? For now we have only hawaiian or peperoni");
+                //_speechSynthesizer.SpeakAsync("Jaka będzie picca?");
             }
         }
 
@@ -155,19 +146,24 @@ namespace Pizzeria
             if (textList.Contains("Stop"))
             {
                 _speechOn = false;
-                _speechSynthesizer.SpeakAsync("Dziękuję za zamówienie!");
+                //_speechSynthesizer.SpeakAsync("Dziękuję za zamówienie!");
+                CalculateThePrice();
+                SetLabels();
+                _speechSynthesizer.SpeakAsync($"Thank you for the order. It will be {_pizza.Price} dollars. Have a nice day!");
                 return;
             }
 
             if (textList.Contains("Pomoc"))
             {
-                _speechSynthesizer.SpeakAsync("Zamów piccce!");
+                _speechSynthesizer.SpeakAsync("Please order a pizza!");
+                //_speechSynthesizer.SpeakAsync("Zamów piccce!");
                 return;
             }
 
             if (textList.Contains("Anuluj"))
             {
-                _speechSynthesizer.SpeakAsync("Anulowano zamówienie!");
+                _speechSynthesizer.SpeakAsync("Resetting the order! You can order new one now.");
+                //_speechSynthesizer.SpeakAsync("Anulowano zamówienie!");
                 _pizza.ResetPizza();
                 SetLabels();
             }
@@ -177,19 +173,22 @@ namespace Pizzeria
         {
             if (string.IsNullOrEmpty(_pizza.Cake))
             {
-                _speechSynthesizer.SpeakAsync("Jakie ciasto?");
+                _speechSynthesizer.SpeakAsync("What kind of cake?");
+                //_speechSynthesizer.SpeakAsync("Jakie ciasto?");
                 return;
             }
 
             if (string.IsNullOrEmpty(_pizza.Dip))
             {
-                _speechSynthesizer.SpeakAsync("Jaki sos?");
+                //_speechSynthesizer.SpeakAsync("Jaki sos?");
+                _speechSynthesizer.SpeakAsync("Which sauce?");
                 return;
             }
 
             if (string.IsNullOrEmpty(_pizza.Choice))
             {
-                _speechSynthesizer.SpeakAsync("Jaka picca?");
+                //_speechSynthesizer.SpeakAsync("Jaka pizza?");
+                _speechSynthesizer.SpeakAsync("Which pizza?");
             }
 
         }

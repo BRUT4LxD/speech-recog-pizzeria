@@ -5,9 +5,9 @@ namespace Pizzeria
     {
         public static readonly IEnumerable<string> DefaultCommands = new List<string>(3)
         {
-            "Pomoc",
+            "Help",
             "Stop",
-            "Anuluj"
+            "Cancel"
         };
 
 
@@ -26,23 +26,23 @@ namespace Pizzeria
         public static readonly IEnumerable<string> PizzaChoices = new List<string>(2)
         {
             "peperoni",
-            "hawajska",
+            "hawai",
+            "hawaiian",
         };
         public static readonly IEnumerable<string> Dipps = new List<string>(6)
         {
-            "Czosnkowy",
-            "Meksykański",
-            "Arabski",
-            "Salmon",
-            "Bez sosu",
-            "Bez"
+            "garlic",
+            "maxican",
+            "arabian",
+            "no sauce",
+            "no"
         };
 
         public static readonly IEnumerable<string> Cakes = new List<string>(3)
         {
-            "Grube",
-            "Cienke",
-            "Średnie"
+            "thick",
+            "thin",
+            "medium"
         };
     }
 }
