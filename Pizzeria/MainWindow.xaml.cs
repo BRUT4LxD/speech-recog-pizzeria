@@ -103,17 +103,18 @@ namespace Pizzeria
 
         private void ProcessOrder(IReadOnlyCollection<string> textList)
         {
-            int noice = 0;
+            int noise = 0;
             if (textList.Contains("sauce"))
             {
-                noice++;
+                noise++;
             }
 
             if (textList.Contains("pizza"))
             {
-                noice++;
+                noise++;
             }
-            switch (textList.Count - noice)
+
+            switch (textList.Count - noise)
             {
                 case 1:
                     ProcessStepByStep();
