@@ -29,10 +29,10 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Pizzeria" Grid.ColumnSpan="4" 
                    HorizontalAlignment="Center" Margin="20" FontSize="64" FontFamily="Vivaldi"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Pizza:" Margin="10"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="Ciasto: " Margin="10"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="Sos" Margin="10"/>
-        <TextBlock Grid.Row="4" Grid.Column="1" Text="Do zapłaty:" Margin="10"/>
-        <TextBlock Grid.Row="5" Grid.Column="3" Text="Najlepsza pizza w galaktyce" FontSize="23" FontFamily="Viner Hand ITC"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="10"><Run Text="Cake"/><Run Text=": "/></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="10"><Run Text="Sauce"/><Run Text=":"/></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="Price:" Margin="10"/>
+        <TextBlock Grid.Row="5" Grid.Column="3" Text="Best pizza in the galaxy" FontSize="23" FontFamily="Viner Hand ITC"/>
         <TextBox Grid.Row="1" Grid.Column="2" x:Name="pizzaNumber" Width="200" Margin="10"/>
         <TextBox Grid.Row="2" Grid.Column="2" x:Name="pizzaCake" Width="200" Margin="10"/>
         <TextBox Grid.Row="3" Grid.Column="2" x:Name="pizzaDip" Width="200" Margin="10"/>

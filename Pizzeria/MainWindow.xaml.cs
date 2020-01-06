@@ -114,6 +114,11 @@ namespace Pizzeria
                 noise++;
             }
 
+            if (textList.Contains("cake"))
+            {
+                noise++;
+            }
+
             switch (textList.Count - noise)
             {
                 case 1:
